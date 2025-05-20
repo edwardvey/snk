@@ -1,0 +1,17 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Every day at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub Contribution Snake
+        uses: pantane/snk@main
+        with:
+          github_user_name: edwardvey
+          outputs: |
+            dist/github-contribution-grid-snake.svg
